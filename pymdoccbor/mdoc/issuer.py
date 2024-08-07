@@ -67,7 +67,8 @@ class MdocCborIssuer:
         create a new mdoc with signed mso
         """
         if isinstance(devicekeyinfo, dict):
-            devicekeyinfo = CoseKey.from_dict(devicekeyinfo)
+            #devicekeyinfo = CoseKey.from_dict(devicekeyinfo)
+            pass
         if isinstance(devicekeyinfo, str):
             device_key_bytes = base64.urlsafe_b64decode(devicekeyinfo.encode("utf-8"))
             public_key = serialization.load_pem_public_key(device_key_bytes)

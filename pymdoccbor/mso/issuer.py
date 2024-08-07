@@ -172,7 +172,7 @@ class MsoIssuer(MsoX509Fabric):
             with open(self.cert_path, "rb") as file:
                 certificate = file.read()
 
-            cert = x509.load_der_x509_certificate(certificate)
+            cert = x509.load_pem_x509_certificate(certificate)
 
             _cert = cert.public_bytes(getattr(serialization.Encoding, "DER"))
         else:
@@ -198,7 +198,10 @@ class MsoIssuer(MsoX509Fabric):
 
         else:
             # print("payload diganostic notation: \n", cbor2diag(cbor2.dumps(cbor2.CBORTag(24,cbor2.dumps(payload)))))
-
+            print("what")
+            print(payload)
+            cbor2.dumps({"test": "test"}, canonical=True)
+            cbor2.dumps(payload, canonical=True)
             mso = Sign1Message(
                 phdr={
                     Algorithm: self.private_key.alg,
