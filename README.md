@@ -34,7 +34,7 @@ pip install pymdlmdoc
 or
 
 ````
-pip install git+https://github.com/devisefutures/pyMDOC-CBOR.git@cert_arg
+pip install git+https://github.com/BrageHK/pyMDOC-CBOR.git
 ````
 
 ## Usage
